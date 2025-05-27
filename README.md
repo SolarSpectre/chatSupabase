@@ -1,5 +1,7 @@
 # Aplicación de Chat en Tiempo Real
 
+Joseph Caza - Ariel Catucuamba
+
 Una aplicación de chat en tiempo real construida con Angular, Ionic y Supabase, que permite a los usuarios comunicarse de manera instantánea con una interfaz moderna y responsiva.
 
 ## Características
