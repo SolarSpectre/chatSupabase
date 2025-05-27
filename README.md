@@ -14,10 +14,10 @@ Una aplicación de chat en tiempo real construida con Angular, Ionic y Supabase,
 ## Capturas de Pantalla
 
 ### Pantalla de Inicio de Sesión
-[Insertar captura de pantalla de la página de login]
+![imagen](https://github.com/user-attachments/assets/079b13c1-a4aa-4936-9f8a-11659a59b8c8)
 
 ### Interfaz del Chat
-[Insertar captura de pantalla de la interfaz del chat]
+![imagen](https://github.com/user-attachments/assets/0af64f27-6def-4c0e-8895-7186f7ad2cb2)
 
 ## Tecnologías Utilizadas
 
