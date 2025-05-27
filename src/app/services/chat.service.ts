@@ -28,13 +28,12 @@ export class ChatService {
       .order('created_at', { ascending: true });
 
     if (error) {
-      console.error('Error fetching messages:', error);
+      console.error('Error al obtener mensajes:', error);
       return;
     }
 
     this.messagesSubject.next(initialMessages || []);
 
-    // Subscribe to real-time changes
     supabase
       .channel('messages')
       .on('postgres_changes', 
@@ -52,7 +51,7 @@ export class ChatService {
     const { data: { user } } = await supabase.auth.getUser();
     
     if (!user) {
-      throw new Error('User not authenticated');
+      throw new Error('Usuario no autenticado');
     }
 
     const { error } = await supabase
@@ -66,7 +65,7 @@ export class ChatService {
       ]);
 
     if (error) {
-      console.error('Error sending message:', error);
+      console.error('Error al enviar mensaje:', error);
       throw error;
     }
   }

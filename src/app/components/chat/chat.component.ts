@@ -4,8 +4,8 @@ import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 import { ChatService, Message } from '../../services/chat.service';
 import { send } from 'ionicons/icons';
-
 import { addIcons } from 'ionicons';
+import { supabase } from '../../supabase.client';
 
 @Component({
   selector: 'app-chat',
@@ -24,19 +24,16 @@ export class ChatComponent implements OnInit, AfterViewChecked {
     addIcons({ send });
   }
 
-  ngOnInit() {
+  async ngOnInit() {
+    // Get current user email
+    const { data: { user } } = await supabase.auth.getUser();
+    if (user) {
+      this.currentUserEmail = user.email || '';
+    }
+
+    // Subscribe to messages
     this.chatService.messages$.subscribe(messages => {
       this.messages = messages;
-    });
-
-    // Get current user email
-    this.chatService.messages$.subscribe(messages => {
-      if (messages.length > 0) {
-        const currentUser = messages.find(m => m.user_id === messages[0].user_id);
-        if (currentUser) {
-          this.currentUserEmail = currentUser.user_email;
-        }
-      }
     });
   }
 
