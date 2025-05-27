@@ -1,0 +1,22 @@
+ion-content {
+  --padding-top: 0;
+  --padding-bottom: 0;
+}
+
+.welcome-message {
+  background-color: #f8f9fa;
+  padding: 1rem;
+  text-align: center;
+  border-bottom: 1px solid #dee2e6;
+  
+  p {
+    margin: 0;
+    color: #495057;
+    font-size: 0.9rem;
+  }
+}
+
+app-chat {
+  height: calc(100% - 48px); // Subtract the height of the welcome message
+  display: block;
+}

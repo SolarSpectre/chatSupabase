@@ -1,0 +1,20 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Chat App</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding">
+  <div class="welcome-message">
+    <p>Welcome, {{email}}!</p>
+    <ion-buttons slot="end">
+      <ion-button (click)="logout()" color="danger">
+        <ion-icon name="log-out-outline"></ion-icon>
+        Cerrar Sesion
+      </ion-button>
+    </ion-buttons>
+  </div>
+  
+  
+  <app-chat></app-chat>
+</ion-content>
